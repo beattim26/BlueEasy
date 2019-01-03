@@ -1,0 +1,390 @@
+$dark-color: rgba(0, 0, 0, 0.5);
+$blue-color: #4bcaff;
+$portfolio-text-color: #515f67;
+$text-dark-color: #656d78;
+$background-footer: #353f47;
+@mixin title-border ($start-width, $color, $top) {
+	&:after {
+		position: absolute;
+		top: $top;
+	    display: block;
+	    content: "";
+	    height: 2px;
+	    width: $start-width;
+	    background-color: $color;
+	    -webkit-transition: width .3s ease-in-out;
+	    -moz--transition: width .3s ease-in-out;
+	    transition: width .3s ease-in-out;
+	}
+	&:hover:after {
+		width: 100%;
+	}
+}
+
+body {
+	font-family: 'Lato', sans-serif;
+}
+
+//START OF HEADER
+
+.header {
+	background: url(../img/header-background.jpg) no-repeat;
+	background-size: cover;
+}
+
+.navbar-brand {
+	margin: 0 auto;
+}
+
+.navigation {
+	padding: 40px 0 40px 0;
+	background-color: $dark-color;
+}
+
+.navigation-list__item {
+	margin: 10px 5px 0 0;
+}
+
+.navigation-list__link {
+	padding: 8px 15px;
+	color: $blue-color;
+	border: 1.5px solid transparent;
+	font-size: 14px;
+	line-height: 24px;
+	font-weight: 700;
+	&:hover {
+		margin-left: 3px;
+		border: 1.5px solid $blue-color;
+		margin-left: 0;
+		color: $blue-color;
+		text-decoration: none;
+	}
+}
+
+.header-title {
+	min-height: 600px;
+}
+
+.title-quote__text--first {
+	display: inline-block;
+	background-color: $dark-color;
+	font-weight: 300;
+}
+
+.title-quote__text--second {
+	display: inline-block;
+	margin-top: 10px;
+	background-color: $dark-color;
+	font-weight: 300;
+}
+
+//END OF HEADER
+//START OF SERVICES
+
+.services {
+	background-color: $blue-color;
+	padding: 80px 0;
+}
+
+.services-title {
+	position: relative;
+	display: inline-block;
+	margin-bottom: 50px;
+	font-size: 30px;
+	line-height: 24px;
+	font-weight: 300;
+	@include title-border(30%, #fff, 30px);
+}
+
+.services-block__title {
+	padding: 15px 0;
+	font-weight: 700;
+}
+
+.services-block__paragraph {
+	font-size: 12px;
+	line-height: 18px;
+}
+
+//END OF SERVICES
+//START OF PORTFOLIO
+
+.portfolio {
+	padding: 80px 0;
+	color: $portfolio-text-color;
+}
+
+.portfolio-title {
+	display: inline-block;
+	position: relative;
+	padding: 10px 0;
+	@include title-border(30%, $portfolio-text-color, 52.5px);
+}
+
+.portfolio-list {
+	list-style: none;
+	margin-right: -18px;
+	padding-top: 20px;
+	font-size: 14px;
+	font-weight: 700;
+}
+
+.portfolio-list__item {
+	margin-bottom: 10px;
+}
+
+.portfolio-list__link {
+	padding: 5px 15px;
+	border: 1.5px solid transparent;
+	text-decoration: none;
+	color: $portfolio-text-color;
+	&:hover {
+		border: 1.5px solid $blue-color;
+		color: $blue-color;
+		text-decoration: none;
+	}
+}
+
+.portfolio__image-list {
+	margin-top: 70px;
+}
+
+.image-list__link {
+	&:hover::before {
+		content: '';
+		position: absolute;
+		width: 270px;
+		height: 270px;
+		background: url(../img/portfolio-plus.svg) no-repeat;
+		background-position: 125px 120px;
+		background-color: rgba(0, 0, 0, 0.6);
+	}
+}
+
+.image-list__item {
+	margin-bottom: 30px;
+}
+
+//END OF PORTFOLIO
+//START OF DEFAULT-SECTION
+
+.default-section {
+	padding: 80px 0;
+	background-color: $portfolio-text-color;
+}
+
+.default-title {
+	font-weight: 400;
+	display: inline-block;
+	position: relative;
+	@include title-border(20%, white, 42.5px);
+}
+
+.default-text {
+	padding: 20px 0;
+	&--first {
+		font-weight: 300;
+	}
+	&--second {
+		font-weight: 300;
+	}
+}
+
+.default-button {
+	padding: 10px 25px;
+	color: black;
+	text-decoration: none;
+	border: 1.5px solid black;
+	&:hover {
+		text-decoration: none;
+		color: white;
+		border: 1.5px solid white;
+	}
+}
+
+.default-video {
+	width: 100%;
+	padding-top: 0;
+}
+
+//END OF DEFAULT-SECTION
+//START OF SOCIAL SECTION
+
+.social {
+	padding: 60px 0;
+	background-color: $blue-color;
+}
+
+.social-title {
+	font-weight: 300;
+	display: inline-block;
+	position: relative;
+	@include title-border(30%, white, 42px);
+}
+
+.social-text {
+	padding-top: 35px;
+	font-size: 28px;
+	font-weight: 300;
+}
+
+.social-icon {
+	padding-top: 5px;
+	font-size: 30px;
+}
+
+//END OF SOCIAL SECTION
+//START OF ABOUT SECTION
+
+.about {
+	padding: 60px 0;
+	background: url(../img/about-background.jpg) no-repeat;
+	background-size: cover;
+}
+
+.about-title {
+	font-weight: 300;
+	display: inline-block;
+	position: relative;
+	@include title-border(25%, white, 42px);
+}
+
+.about-text {
+	padding-top: 35px;
+	font-weight: 300;
+}
+
+.about-list {
+	list-style: none;
+	padding: 40px 0 0 0;
+}
+
+.about-list__link {
+	display: block;
+	width: 63px;
+	height: 63px;
+	margin-right: 20px;
+	font-size: 40px;
+	border: 1.5px solid white;
+}
+
+//END OF ABOUT SECTION
+//START OF TESTIMONIALS
+
+.testimonials {
+	padding: 60px 0;
+	background-color: white;
+}
+
+.testimonials-title {
+	font-weight: 300;
+	display: inline-block;
+	position: relative;
+	@include title-border(30%, $text-dark-color, 42.5px);
+}
+
+.testimonials-text {
+	padding-top: 35px;
+	font-size: 28px;
+	font-weight: 300;
+}
+
+.testimonials-icon {
+	padding-top: 5px;
+	font-size: 30px;
+}
+
+.testimonials-quote {
+	color: $blue-color;
+	font-weight: 700;
+}
+
+//END OF TESTIMONIALS
+//START OF CONTACT
+
+.contact {
+	padding: 60px 0;
+	background: url(../img/contact-background.jpg) no-repeat;
+	background-size: cover;
+}
+
+.contact-title {
+	font-weight: 300;
+	display: inline-block;
+	position: relative;
+	@include title-border(30%, white, 42px);
+}
+
+.form-name {
+	display: block;
+}
+
+.name-field {
+	width: 98%;
+	padding: 2%;
+	color: white;
+	background-color: transparent;
+	border: 1.5px solid white;
+}
+
+.form-mail {
+	display: block;
+}
+
+.mail-field {
+	width: 98%;
+	padding: 2%;
+	color: white;
+	background-color: transparent;
+	border: 1.5px solid white;
+}
+
+.form-message {
+	display: block;
+}
+
+.message-field {
+	width: 98%;
+	height: 100%;
+	padding: 2%;
+	color: white;
+	background-color: transparent;
+	border: 1.5px solid white;
+}
+
+.contact-button {
+	width: 98%;
+	min-height: 50px;
+	cursor: pointer;
+	background-color: $blue-color;
+	border: none;
+}
+
+//END OF CONTACT
+//START OF FOOTER
+
+.footer {
+	background-color: $background-footer;
+	padding: 60px 0;
+}
+
+.footer-list {
+	list-style: none;
+}
+
+.footer-list__item {
+	margin-right: 20px;
+}
+
+.footer-list__link {
+	text-decoration: none;
+	color: $portfolio-text-color;
+	&:hover {
+		text-decoration: none;
+		color: $portfolio-text-color;
+	}
+}
+
+.footer-copyright {
+	color: $portfolio-text-color;
+}
